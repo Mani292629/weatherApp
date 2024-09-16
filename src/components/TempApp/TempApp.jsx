@@ -177,7 +177,7 @@ const TempApp = () => {
                                 onChange={(event) => { setInput(event.target.value) }}
                             />
 
-                            <div className="btn ms-3" onClick={() => { setSearch(input) }} style={{ border: 'none' }} >
+                            <div className="btn ms-3" onClick={() => { setSearch(input.trim())}} style={{ border: 'none' }} >
                                 <img src={searchhh} style={{ maxHeight: "4vh" }} alt="unavailable" />
                             </div>
 
