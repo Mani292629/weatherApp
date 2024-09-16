@@ -26,27 +26,12 @@ const TempApp = () => {
     const [background, setbackground] = useState();
     const [input, setInput] = useState("");
     const [search, setSearch] = useState("Najibabad");
-    const [lat ,setlat] = useState("null");
-    const [lon,setlon] = useState("null")
+   
 
     const date = new Date();
 
 
-    async function success(position) {
-        const apiUrl = await fetch (`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=3b9245847b6a708d800b4b7c56a83503`)
-        const apiUrlres = apiUrl.json();
-        console.log(apiUrlres)
-    }
-    function failed(failed) {
-        console.log('postion failed')
-    }
 
-
-    async function getCurrentLocation() {
-        const res= navigator.geolocation.getCurrentPosition(success, failed)
-        console.log(res);
-    }
-    
 
     async function data() {
         try {
@@ -167,7 +152,7 @@ const TempApp = () => {
     }
     useEffect(() => {
         data();
-        getCurrentLocation();
+      
     }, []);
 
     useEffect(() => {
